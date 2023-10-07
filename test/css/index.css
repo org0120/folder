@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Cairo:wght@200;300&family=Croissant+One&family=Dancing+Script&family=Kanit:wght@300&family=Oswald:wght@700&family=Playfair+Display:ital@1&family=Poppins:wght@600;700;900&family=Roboto:wght@700&family=Rubik&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: var(--transition);
+}
+:root
+{
+    /* ========Colors================== */
+    --color-light            :#0000002b;
+    --color-background       :#e8e8ea;
+    --color                  :#432818;
+    --color-hover            :rgba(69, 59, 0, 0.152);
+    --transition: 0.2s ease;
+
+    --shadoww: 0 0px 10px #0000006e;
+}
+
+.dark
+{
+    --color-background: #432818;
+    --color: #ffe6a7;
+    --color-hover: rgba(69, 59, 0, 0.152);
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color:  var(--color-background);
+}
+header{
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 8px 10px var(--color-light);
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+header .logo{
+    width:185px ;
+    height:45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .logo p {
+    width: 135px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color);
+    font-family: 'Croissant One', cursive;
+    font-size: 18px;
+    font-weight: bold;
+}
+header .logo img{
+    width: 45px;
+    height: 100%;
+}
+header .switch
+{
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: 3px solid var(--color);
+    border-radius: 3px;
+    margin-left: 20px;
+}
+header .switch ion-icon
+{
+    font-size: 28px;
+    position: absolute;
+    color: var(--color);
+}
+
+header .switch ion-icon:first-of-type
+{
+    opacity: 1;
+}
+header .switch ion-icon:last-of-type{
+    opacity: 0;
+}
+/* ========change================== */
+header .change ion-icon:first-of-type
+{
+    opacity: 0;
+}
+/* ========change================== */
+header .change ion-icon:last-of-type{
+    opacity: 1;
+}
+
+header .container
+{
+    width : 55px ; /*width: 46px;*/
+    height: 100vh;
+    position: absolute;
+    top: 60px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadoww);
+    padding: 5px 5px;
+    border-radius: 5px;
+    background-color: var(--color-background);
+}
+header .active {
+    width: 200px;
+    height: 100vh;
+    position: absolute;
+    top: 60px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+header .container li{
+    list-style: none;
+    position: relative;
+    width:100% ;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    margin: 5px 0;
+    transition: var(--transition);
+}
+header .container li:hover{
+    background-color: var(--color-hover);
+} 
+header .container li a{
+    position: relative;
+    width:100% ;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color);
+}
+header .container li a ion-icon 
+{
+    position: absolute;
+    font-size: 20px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px;
+}
+header .container li a p 
+{
+    position: absolute;
+    width: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 40px;
+}
+header .prof{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: var(--color);
+    outline: 2px solid var(--color);
+}
+header .prof img
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+}
+header .theme{
+    width: 50px;
+    height: 25px;
+    background-color: var(--color);
+    border-radius: 10px;
+    border: 2px solid var(--color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    right: 80px;
+    cursor: pointer;
+}
+header .theme ion-icon:first-of-type
+{
+    color: #fff;
+    background-color: #432818;
+    transition: 0.5s;
+}
+
+header .theme ion-icon:last-of-type
+{
+    width: 22px;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: #000000;
+    background-color: var(--color-background);
+    transition: 0.5s;
+    transform: translateX(2px);
+}
+/* =============startMoving========== */
+header .move ion-icon:first-of-type {
+    width: 22px;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: #fff;
+    background-color: var(--color-background);
+    transition: 0.5s;
+    transform: translateX(23px);
+}
+header .move ion-icon:last-of-type
+{
+    transform: translateX(-22px);
+    color: #432818;
+    transition: 0.5s;
+    background-color: transparent
+}
+/* ============endMoving============= */
+/* ==============================================Start Article=================================== */
+article{
+    width: 1200px;
+    height: 500px;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    z-index: -1;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+.nw{
+        width: 1050px;
+        height: 500px;
+        background-color: var(--color-background);
+        position: absolute;
+        right: 50px;
+        top: 100px;
+        z-index: -1;
+}
+article .details
+{
+    width: 100%;
+    height: 350px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+article .details nav
+{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+article .details nav ion-icon{
+    position: absolute;
+        font-size: 20px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 10px;
+        color: var(--color);
+}
+article .details nav p{
+    position: absolute;
+        width: 150px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 10px;
+        color: var(--color);
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+}
+article .details .details1 
+{
+    width: 100%;
+    height: 75%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+article .details .details1 .likes
+{
+    width: 30%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgb(249, 104, 249);
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+article .details .details1 .likes .icon
+{
+    width: 100%;
+    height: 100px;
+    display: flex;
+        align-items: center;
+        justify-content: space-around;
+}
+article .details .details1 .likes .icon ion-icon
+{
+    font-size: 60px;
+}
+article .details .details1 .likes .par p
+{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+article .details .details1 .likes .par h2
+{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article .details .details1 .likes .par
+{
+    font-family: tahoma;
+}
+/* ==============================================End Article=================================== */
